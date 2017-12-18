@@ -1,0 +1,3 @@
+# rss url
+url = "https://www.lostfilm.tv/rss.xml"
+timeout = 1
