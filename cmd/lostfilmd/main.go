@@ -10,12 +10,15 @@ import (
 )
 
 func main() {
+	currentDir, err := os.Getwd()
+	if err != nil {
+		panic(err)
+	}
+
 	var (
-		config = flag.String("config",
-			fmt.Sprintf("%s%s.lostfilm.toml", os.Getenv("HOME"), string(os.PathSeparator)),
-			"config path",
-		)
+		config = flag.String("config", fmt.Sprintf("%s%sconfig.toml", currentDir, string(os.PathSeparator)), "config path")
 	)
+
 	flag.Parse()
 	d, err := lostfilm.NewDaemon(*config)
 	if err != nil {
@@ -25,5 +28,5 @@ func main() {
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt)
 
-	d.Run(quit)
+	log.Fatal(d.Run(quit))
 }

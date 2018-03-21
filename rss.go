@@ -2,21 +2,21 @@ package lostfilm
 
 import "github.com/mmcdole/gofeed"
 
-type Parser struct {
-	Parser *gofeed.Parser
+type parser struct {
+	parser *gofeed.Parser
 }
 
 // Parse parse rss by it url
-func (p *Parser) Parse(url string) (string, error) {
-	feed, err := p.Parser.ParseURL(url)
+func (p *parser) Parse(url string) ([]*gofeed.Item, error) {
+	feed, err := p.parser.ParseURL(url)
 	if err != nil {
-		return "", err
+		return nil, err
 	}
-	return feed.Title, nil
+
+	return feed.Items, nil
 }
 
 // NewParser return new parser instance
-func NewParser() *Parser {
-	return &Parser{gofeed.NewParser()}
+func newParser() *parser {
+	return &parser{gofeed.NewParser()}
 }
-
