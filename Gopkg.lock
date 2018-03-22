@@ -20,12 +20,6 @@
   revision = "349dd0209470eabd9514242c688c403c0926d266"
 
 [[projects]]
-  name = "github.com/davecgh/go-spew"
-  packages = ["spew"]
-  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
-  version = "v1.1.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/gen2brain/beeep"
   packages = ["."]
@@ -125,6 +119,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e4162ed1f5264e9f60fec72e213204122d6f2ae7a5b346f450c4acc6c3613fad"
+  inputs-digest = "5888e249640f25ae0c1320c4cb02d4b59d4d63f7730fec1b4bbfb496104292f4"
   solver-name = "gps-cdcl"
   solver-version = 1
