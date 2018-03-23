@@ -26,7 +26,7 @@ func (d *daemon) Run(quit <-chan os.Signal) error {
 
 	rssParser := newParser()
 
-	last := time.Date(1970, time.December, 0, 0, 0, 0, 0, time.UTC)
+	last := time.Now()
 
 	for {
 		select {
